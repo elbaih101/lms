@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <row>
+    <id>1</id>
+    <Course Name>Algorithms</Course Name>
+    <Instructor>Scott, Austin C.</Instructor>
+    <Course duration>8 weeks</Course duration>
+    <Course time>2H</Course time>
+    <Location>Hall1</Location>
+  </row>
+  <row>
+    <id>2</id>
+    <Course Name>Number Theory.</Course Name>
+    <Instructor>Rojas, Yoshio N.</Instructor>
+    <Course duration>10 weeks</Course duration>
+    <Course time>3H</Course time>
+    <Location>Hall4</Location>
+  </row>
+  <row>
+    <id>3</id>
+    <Course Name>Computer Engineering</Course Name>
+    <Instructor>Farley, Jamal C.</Instructor>
+    <Course duration>12 weeks</Course duration>
+    <Course time>1.5H</Course time>
+    <Location>Hall2</Location>
+  </row>
+  <row>
+    <id>4</id>
+    <Course Name>Computer Forensics.</Course Name>
+    <Instructor>Ferguson, Nadine X.</Instructor>
+    <Course duration>8 weeks</Course duration>
+    <Course time>2H</Course time>
+    <Location>Hall3</Location>
+  </row>
+  <row>
+    <id>5</id>
+    <Course Name>Computer Networking.</Course Name>
+    <Instructor>Webster, Allistair M.</Instructor>
+    <Course duration>10 weeks</Course duration>
+    <Course time>3H</Course time>
+    <Location>Hall1</Location>
+  </row>
+  <row>
+    <id>6</id>
+    <Course Name>Computer Programming.</Course Name>
+    <Instructor>Holland, Lee I.</Instructor>
+    <Course duration>12 weeks</Course duration>
+    <Course time>1.5H</Course time>
+    <Location>Hall4</Location>
+  </row>
+  <row>
+    <id>7</id>
+    <Course Name>Cyber Security.</Course Name>
+    <Instructor>Fry, Alisa B.</Instructor>
+    <Course duration>8 weeks</Course duration>
+    <Course time>2H</Course time>
+    <Location>Hall2</Location>
+  </row>
+  <row>
+    <id>8</id>
+    <Course Name>Database Administration.</Course Name>
+    <Instructor>Lancaster, Cassidy F.</Instructor>
+    <Course duration>10 weeks</Course duration>
+    <Course time>3H</Course time>
+    <Location>Hall3</Location>
+  </row>
+  <row>
+    <id>9</id>
+    <Course Name>Information Security.</Course Name>
+    <Instructor>Parker, Chelsea G.</Instructor>
+    <Course duration>12 weeks</Course duration>
+    <Course time>1.5H</Course time>
+    <Location>Hall1</Location>
+  </row>
+  <row>
+    <id>10</id>
+    <Course Name>Information Technology.</Course Name>
+    <Instructor>Montgomery, Edan O.</Instructor>
+    <Course duration>8 weeks</Course duration>
+    <Course time>2H</Course time>
+    <Location>Hall4</Location>
+  </row>
+  <row>
+    <id>11</id>
+    <Course Name>Data Structure &amp; Algorithms.</Course Name>
+    <Instructor>Sutton, Yoshi A.</Instructor>
+    <Course duration>10 weeks</Course duration>
+    <Course time>3H</Course time>
+    <Location>Hall2</Location>
+  </row>
+  <row>
+    <id>12</id>
+    <Course Name>Advanced Programming . </Course Name>
+    <Instructor>Valentine, Kelly R.</Instructor>
+    <Course duration>12 weeks</Course duration>
+    <Course time>1.5H</Course time>
+    <Location>Hall3</Location>
+  </row>
+  <row>
+    <id>13</id>
+    <Course Name>Computer Architecture. </Course Name>
+    <Instructor>Townsend, Raymond U.</Instructor>
+    <Course duration>8 weeks</Course duration>
+    <Course time>2H</Course time>
+    <Location>Hall1</Location>
+  </row>
+  <row>
+    <id>14</id>
+    <Course Name>Operating Systems. </Course Name>
+    <Instructor>Zamora, Morgan W.</Instructor>
+    <Course duration>10 weeks</Course duration>
+    <Course time>3H</Course time>
+    <Location>Hall4</Location>
+  </row>
+  <row>
+    <id>15</id>
+    <Course Name>Mathematics.</Course Name>
+    <Instructor>Watts, Alika V.</Instructor>
+    <Course duration>12 weeks</Course duration>
+    <Course time>1.5H</Course time>
+    <Location>Hall2</Location>
+  </row>
+  <row>
+    <id>16</id>
+    <Course Name>Database Management.</Course Name>
+    <Instructor>Vazquez, Barbara P.</Instructor>
+    <Course duration>8 weeks</Course duration>
+    <Course time>2H</Course time>
+    <Location>Hall3</Location>
+  </row>
+  <row>
+    <id>17</id>
+    <Course Name>Advanced Computer Networks.</Course Name>
+    <Instructor>Haley, Cathleen U.</Instructor>
+    <Course duration>10 weeks</Course duration>
+    <Course time>3H</Course time>
+    <Location>Hall1</Location>
+  </row>
+</root>

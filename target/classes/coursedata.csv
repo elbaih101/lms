@@ -1,0 +1,18 @@
+id,Course Name,Instructor,Course duration,Course time,Location
+1,Algorithms,"Scott, Austin C.",8 weeks,2H,Hall1
+2,Number Theory.,"Rojas, Yoshio N.",10 weeks,3H,Hall4
+3,Computer Engineering,"Farley, Jamal C.",12 weeks,1.5H,Hall2
+4,Computer Forensics.,"Ferguson, Nadine X.",8 weeks,2H,Hall3
+5,Computer Networking.,"Webster, Allistair M.",10 weeks,3H,Hall1
+6,Computer Programming.,"Holland, Lee I.",12 weeks,1.5H,Hall4
+7,Cyber Security.,"Fry, Alisa B.",8 weeks,2H,Hall2
+8,Database Administration.,"Lancaster, Cassidy F.",10 weeks,3H,Hall3
+9,Information Security.,"Parker, Chelsea G.",12 weeks,1.5H,Hall1
+10,Information Technology.,"Montgomery, Edan O.",8 weeks,2H,Hall4
+11,Data Structure & Algorithms.,"Sutton, Yoshi A.",10 weeks,3H,Hall2
+12,Advanced Programming . ,"Valentine, Kelly R.",12 weeks,1.5H,Hall3
+13,Computer Architecture. ,"Townsend, Raymond U.",8 weeks,2H,Hall1
+14,Operating Systems. ,"Zamora, Morgan W.",10 weeks,3H,Hall4
+15,Mathematics.,"Watts, Alika V.",12 weeks,1.5H,Hall2
+16,Database Management.,"Vazquez, Barbara P.",8 weeks,2H,Hall3
+17,Advanced Computer Networks.,"Haley, Cathleen U.",10 weeks,3H,Hall1
