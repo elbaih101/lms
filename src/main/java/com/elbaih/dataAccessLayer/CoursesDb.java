@@ -33,6 +33,12 @@ public class CoursesDb  extends IRetrever<Course>{
         return null;
     }
 
+    @Override
+    public void listAll() {
+        // TODO Auto-generated method stub
+        
+    }
+
    
 
 }

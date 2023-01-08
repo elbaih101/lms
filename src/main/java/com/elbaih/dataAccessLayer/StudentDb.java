@@ -2,9 +2,12 @@ package com.elbaih.dataAccessLayer;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.apache.commons.collections4.functors.CatchAndRethrowClosure;
 
 import com.elbaih.data.Student;
 import com.elbaih.fileinputandconvertion.Convertion;
@@ -21,8 +24,7 @@ public class StudentDb extends IRetrever<Student> {
             CSVReader csvReader = getDb(Convertion.studentDataDb);
             String[] studentLine;
             while ((studentLine = csvReader.readNext()) != null) {
-                students.add(new Student(studentLine[0], studentLine[1], studentLine[2], studentLine[3], studentLine[4],
-                        studentLine[5]));
+                students.add(new Student(studentLine[0], studentLine[1], studentLine[2], studentLine[3], studentLine[4],studentLine[5],studentLine[6]));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,14 +42,21 @@ public class StudentDb extends IRetrever<Student> {
         return null;
     }
 
+    public  void listAll()  {
 
-   public void listStudents()
-   {    System.out.println("student list:");
-   System.out.println("id,      name,  Grade,   email,    address,   region,  country");
-    for (Student r : getAll()) {
-        System.out.println(r.id+","+r.name+","+r.grade+","+r.email+","+r.region+","+r.country);
-   }
-   }
+        System.out.println("Students list");
+        System.out.println("");
+        try (CSVReader reader = getDb(Convertion.studentDataDb);) {
+            List<String[]> r = reader.readAll();
+            r.forEach(x -> System.out.println(Arrays.toString(x)));
+            System.out.println("------------------------------------------------------------------------------------");
+        }
+        
+            
+             catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
 
-
+    }
 }

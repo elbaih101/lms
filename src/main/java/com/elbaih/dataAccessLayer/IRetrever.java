@@ -22,11 +22,14 @@ public abstract class  IRetrever<R>{
     }
 
     abstract public ArrayList<R> getAll();
+    
+    abstract public void listAll();
 
     abstract public R get(String id);
 
     public void printAll(){
     getAll().forEach(i->System.out.println(i.toString()+"\n"));
+    
         
        // for (Student r : Student.getAll()) {
        //      System.out.println(r.id+","+r.name+","+r.grade+","+r.email+","+r.region+","+r.country);

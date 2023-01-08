@@ -5,11 +5,13 @@ public class AdminDb{
 
     public void insert(){
 
-    };
-    public void delete(){
+    }
+    public void listData()
+    {
+        
 
-    };
+    }
     public void replace(){
 
-    };
+    }
 }
