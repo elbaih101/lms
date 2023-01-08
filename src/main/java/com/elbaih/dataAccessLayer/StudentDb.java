@@ -42,21 +42,5 @@ public class StudentDb extends IRetrever<Student> {
         return null;
     }
 
-    public  void listAll()  {
-
-        System.out.println("Students list");
-        System.out.println("");
-        try (CSVReader reader = getDb(Convertion.studentDataDb);) {
-            List<String[]> r = reader.readAll();
-            r.forEach(x -> System.out.println(Arrays.toString(x)));
-            System.out.println("------------------------------------------------------------------------------------");
-        }
-        
-            
-             catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
-        }
-
-    }
+    
 }

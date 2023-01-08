@@ -1,6 +1,7 @@
 package com.elbaih.dataAccessLayer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.elbaih.data.Course;
 import com.elbaih.data.Student;
@@ -8,6 +9,11 @@ import com.elbaih.fileinputandconvertion.Convertion;
 import com.opencsv.CSVReader;
 
 public class CoursesDb  extends IRetrever<Course>{
+    private AdminDb adminDb;
+
+    public CoursesDb(){
+        this.adminDb = new AdminDb();
+    }
 
     @Override
     public ArrayList<Course> getAll() {
@@ -33,12 +39,26 @@ public class CoursesDb  extends IRetrever<Course>{
         return null;
     }
 
-    @Override
-    public void listAll() {
-        // TODO Auto-generated method stub
+    
+    public ArrayList<Course> getAllWithStudentId(Student selectedStudent) {
+        List<String> coursesIds = adminDb.getStudentCoursesIds(selectedStudent);
+        ArrayList<Course> courses = new ArrayList<>();
+
+        if(coursesIds!=null) {
+            for (String courseId : coursesIds) {
+               Course course = get(courseId);
+               if(course!=null)
+                courses.add(course);
+            }
+        }
+      
+        return courses;
+    }
+
+    
         
     }
 
    
 
-}
+

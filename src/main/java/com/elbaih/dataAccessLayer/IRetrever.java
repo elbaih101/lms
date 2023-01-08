@@ -23,7 +23,7 @@ public abstract class  IRetrever<R>{
 
     abstract public ArrayList<R> getAll();
     
-    abstract public void listAll();
+    
 
     abstract public R get(String id);
 

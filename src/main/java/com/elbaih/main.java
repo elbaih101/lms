@@ -8,7 +8,6 @@ public class main {
     public static void main(String[] args) {
         Convertion.initDataBase();
         new Home().start();
-        new Home().printCoursesTable();
      
      
       
