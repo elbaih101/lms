@@ -40,7 +40,7 @@ public class Home {
 
   public void selectStudentAction() {
     Scanner s = new Scanner(System.in);
-    System.out.println("Please select the required student:1");
+    System.out.println("Please select the required student:");
 
     String id = s.nextLine();
 
@@ -53,10 +53,33 @@ public class Home {
       printStudentTable(Arrays.asList(student),"student details");
       printCoursesTable(courses.getAllWithStudentId(CashedDb.selectedStudent), "Enrolled courses.");
       Menu.printMainMenu();
+      String choice= s.nextLine();
+
+     switch(choice)
+     {
+        case "e":
+        new Enrollement().enrollement ();
+       
+    
+      break;
+      case "u":
+        Menu.printUnEnrollementMenu();
+    
+      break;
+      case "r":
+        Menu.printReplaceCourseMenu();;
+    
+      break;
+      case "h":
+        new Home().start();
+    
+      break;
+     }
     }
+    
   }
 
-  public void printStudentTable(List<Student> list,String title) {
+  public  void printStudentTable(List<Student> list,String title) {
     
     String message = title == null ?"Student list:":title;
     message += "\n" + repeatString("=", 130);
@@ -73,7 +96,7 @@ public class Home {
     System.out.println(message);
   }
 
-  public static void printCoursesTable(List<Course> list, String title) {
+  public  void printCoursesTable(List<Course> list, String title) {
     
     if (list == null || list.isEmpty()){System.out.println(title+"\n this student isn't inroled in any course\n"+repeatString("-", 150));}
    else{
