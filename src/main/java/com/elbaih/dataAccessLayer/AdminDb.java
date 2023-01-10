@@ -36,7 +36,7 @@ public class AdminDb {
                 coursesList.add(courseId);
             }
         }
-        studentCourseRelatioMap.put(courseId, coursesList);
+        studentCourseRelatioMap.put(studentId,Arrays.asList(courseId));
         saveToFileJson();
     }
 
@@ -55,12 +55,12 @@ public class AdminDb {
     }
 
     public List<String> getStudentCoursesIds(Student selectedStudent) {
-        return studentCourseRelatioMap.get(selectedStudent);
+        return studentCourseRelatioMap.get(selectedStudent.id);
     }
 
     public static void saveToFileJson() {
         String data = new Gson().toJson(studentCourseRelatioMap);
-        File jsonFile = new File(outputPath + "Student course details" + ".json");
+        File jsonFile = new File(outputPath + "Student-course-details" + ".json");
         BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter(jsonFile));
@@ -74,7 +74,7 @@ public class AdminDb {
 
     public void initDataFromJsonFile() {
         try {
-            String fileString = Files.readString(Paths.get(outputPath + "Student course details" + ".json"));
+            String fileString = Files.readString(Paths.get(outputPath + "Student-course-details" + ".json"));
             Type dbType = new TypeToken<HashMap<String, List<String>>>() {}.getType();
             studentCourseRelatioMap = new Gson().fromJson(fileString, dbType);
         } catch (IOException e) {

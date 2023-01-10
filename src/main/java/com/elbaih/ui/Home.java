@@ -98,7 +98,7 @@ public class Home {
 
   public  void printCoursesTable(List<Course> list, String title) {
     
-    if (list == null || list.isEmpty()){System.out.println(title+"\n this student isn't inroled in any course\n"+repeatString("-", 150));}
+    if (list == null || list.isEmpty()){System.out.println(title+"\n"+repeatString("-",30)+" \nthis student isn't inroled in any course\n"+repeatString("-", 150));}
    else{
     String message = title == null ? "Courses List:" : title;
     message += "\n" + repeatString("=", 150);
