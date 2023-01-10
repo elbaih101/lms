@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.elbaih.data.Student;
 import com.elbaih.fileinputandconvertion.Convertion;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;

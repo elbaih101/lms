@@ -7,25 +7,26 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import com.elbaih.data.Course;
 import com.elbaih.data.Student;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 public class AdminDb {
+ 
+
     public static final String outputPath = "src/main/resources/";
     HashMap<String, List<String>> studentCourseRelatioMap = new HashMap<>();
-
+    
     AdminDb() {
         initDataFromJsonFile();
     }
 
     public void insert(String studentId, String courseId) {
+      
         List<String> coursesList = studentCourseRelatioMap.get(studentId);
         if (coursesList == null) {
             coursesList = Arrays.asList(courseId);

@@ -1,6 +1,5 @@
 package com.elbaih.ui;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -13,7 +12,6 @@ import com.elbaih.dataAccessLayer.IRetrever;
 import com.elbaih.dataAccessLayer.StudentDb;
 import static com.elbaih.ui.Utils.padRight;
 import static com.elbaih.ui.Utils.repeatString;
-
 public class Home {
   private final IRetrever<Student> students;
   private final CoursesDb courses;
@@ -29,13 +27,15 @@ public class Home {
 
   public void printHome() {
     System.out.println("Welcome to LMS" + "\n created by {moustafa hamed elbaih}");
-    System.out.println("====================================================================================" +
-        "\nHome page" +
-        "\n====================================================================================");
-    printStudentTable(students.getAll());
+    System.out.println(repeatString("=", 150) +
+        "\nHome page\n" +
+        repeatString("=", 150));
+    printStudentTable(students.getAll(),null);
     selectStudentAction();
+   // AdminDb.insert(CashedDb.selectedStudent.id,)
 
-    printCoursesTable(courses.getAllWithStudentId(CashedDb.selectedStudent), "Enrolled");
+    
+    
   }
 
   public void selectStudentAction() {
@@ -50,12 +50,15 @@ public class Home {
       printHome();
     } else {
       CashedDb.selectedStudent = student;
-      printStudentTable(Arrays.asList(student));
+      printStudentTable(Arrays.asList(student),"student details");
+      printCoursesTable(courses.getAllWithStudentId(CashedDb.selectedStudent), "Enrolled courses.");
+      Menu.printMainMenu();
     }
   }
 
-  public void printStudentTable(List<Student> list) {
-    String message = "Student list:";
+  public void printStudentTable(List<Student> list,String title) {
+    
+    String message = title == null ?"Student list:":title;
     message += "\n" + repeatString("=", 130);
     message += String.format("\n%s %s %s %s %s %s %s", padRight("id", 5), padRight("name", 20), padRight("Grade", 5),
         padRight("email", 35), padRight("address", 30), padRight("region", 20), padRight("country", 20));
@@ -66,11 +69,14 @@ public class Home {
           padRight(student.region, 20), padRight(student.country, 20));
     }
 
-    message += "\n------------------------------------------------------------------------------------";
+    message += "\n"+repeatString("-", 150);
     System.out.println(message);
   }
 
-  public void printCoursesTable(List<Course> list, String title) {
+  public static void printCoursesTable(List<Course> list, String title) {
+    
+    if (list == null || list.isEmpty()){System.out.println(title+"\n this student isn't inroled in any course\n"+repeatString("-", 150));}
+   else{
     String message = title == null ? "Courses List:" : title;
     message += "\n" + repeatString("=", 150);
     message += String.format("\n%s %s %s %s %s %s ", padRight("id", 5), padRight("Course Name", 30),
@@ -84,10 +90,10 @@ public class Home {
           padRight(course.duration, 20));
     }
 
-    message += "\n------------------------------------------------------------------------------------";
+    message += "\n"+repeatString("-", 150);
     System.out.println(message);
   }
-
+  }
  
   
 }
