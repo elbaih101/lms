@@ -15,7 +15,8 @@ import com.elbaih.dataAccessLayer.StudentDb;
 import com.elbaih.ui.Home;
 import static com.elbaih.ui.Utils.padRight;
 import static com.elbaih.ui.Utils.repeatString;
-import static com.elbaih.ui.Utils.ifNotValidInputRetry;;
+import static com.elbaih.ui.Utils.ifNotValidInputRetry;
+import static com.elbaih.ui.Utils.sleep;
 
 public class Actions {
     CoursesDb coursesDb = new CoursesDb();
@@ -60,7 +61,13 @@ public class Actions {
 
     {
         List<String> lists = adminDb.getStudentCoursesIds(CashedDb.selectedStudent);
-
+        if (lists.isEmpty())
+        {
+            System.out.println("this student hasnt enrolled in any course");
+            sleep(1000);
+            printHome();
+            return;
+        }
         String validInput = ifNotValidInputRetry((input) -> lists.contains(input) || input.equalsIgnoreCase("h"),
                 () -> Menu.printUnEnrollementMenu(),
                 () -> System.out
@@ -78,7 +85,14 @@ public class Actions {
     public void replacemnt() {
         List<String> lists = adminDb.getStudentCoursesIds(CashedDb.selectedStudent);
         List<Course> availableCourseList = coursesDb.getAvailableCoursesForStudent(CashedDb.selectedStudent);
-
+        if (lists.isEmpty())
+        {
+            System.out.println("this student hasnt enrolled in any course");
+            sleep(1000);
+            printHome();
+            return;
+        }
+         
         String cucourse = ifNotValidInputRetry(s -> lists.contains(s) || s.equalsIgnoreCase("h"),
                 "enter the cource id u wish to replace",
                 "invalid course id:plz enter the course id from the list of enrolled courses");

@@ -7,21 +7,15 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.commons.collections.iterators.EmptyListIterator;
-import org.apache.commons.collections4.functors.CatchAndRethrowClosure;
-
-import com.elbaih.data.Course;
 import com.elbaih.data.Student;
 import com.google.gson.Gson;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
+import static com.elbaih.ui.Utils.sleep;
 public class AdminDb {
     public static final String outputPath = "src/main/resources/";
     public static HashMap<String, List<String>> studentCourseRelatioMap = new HashMap<>();
@@ -52,6 +46,7 @@ public class AdminDb {
         studentCourseRelatioMap.put(studentId, coursesList);
         saveToFileJson();
         System.out.println("enrolled succesfully to the" + new CoursesDb().get(courseId).name + "course");
+        sleep(1000);
     }
 
     public void delete(String studentId, String courseId) {
@@ -62,6 +57,8 @@ public class AdminDb {
         studentCourseRelatioMap.put(studentId, coursesList);
         saveToFileJson();
         System.out.println("un enrolled succesfully from the" + new CoursesDb().get(courseId).name + "course");
+        sleep(1000
+        );
     }
 
     public void replace(String studentId, String currentCourseId, String newCourseId) {
@@ -69,6 +66,7 @@ public class AdminDb {
         insert(studentId, newCourseId);
         System.out.println(" succesfully replaced the: " + new CoursesDb().get(currentCourseId).name
                 + " course with the: " + new CoursesDb().get(newCourseId).name + "course");
+                sleep(1000);
     }
 
     public List<String> getStudentCoursesIds(Student selectedStudent) {
