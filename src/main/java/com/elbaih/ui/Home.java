@@ -58,16 +58,16 @@ public class Home {
      switch(choice)
      {
         case "e":
-        new Enrollement().enrollement ();
+        new Actions().enrollement ();
        
     
       break;
       case "u":
-        Menu.printUnEnrollementMenu();
+       new Actions().deletion();
     
       break;
       case "r":
-        Menu.printReplaceCourseMenu();;
+        new Actions().replacemnt();
     
       break;
       case "h":
