@@ -2,17 +2,18 @@ package com.elbaih.dataAccessLayer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.elbaih.data.Course;
 import com.elbaih.data.Student;
 import com.elbaih.fileinputandconvertion.Convertion;
 import com.opencsv.CSVReader;
 
-public class CoursesDb  extends IRetrever<Course>{
+public class CoursesDb extends IRetrever<Course> {
     private AdminDb adminDb;
 
-    public CoursesDb(){
-        this.adminDb = new AdminDb();
+    public CoursesDb() {
+        this.adminDb = AdminDb.getInstance();
     }
 
     @Override
@@ -22,7 +23,8 @@ public class CoursesDb  extends IRetrever<Course>{
             CSVReader csvReader = getDb(Convertion.courseDataDb);
             String[] coursesLine;
             while ((coursesLine = csvReader.readNext()) != null) {
-                courses.add(new Course(coursesLine[0], coursesLine[1], coursesLine[2], coursesLine[3], coursesLine[4],coursesLine[5]));
+                courses.add(new Course(coursesLine[0], coursesLine[1], coursesLine[2], coursesLine[3], coursesLine[4],
+                        coursesLine[5]));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,26 +41,23 @@ public class CoursesDb  extends IRetrever<Course>{
         return null;
     }
 
-    
-    public ArrayList<Course> getAllWithStudentId(Student selectedStudent) {
+    public List<Course> getAllWithStudent(Student selectedStudent) {
         List<String> coursesIds = adminDb.getStudentCoursesIds(selectedStudent);
         ArrayList<Course> courses = new ArrayList<>();
 
-        if(coursesIds!=null) {
+        if (coursesIds != null) {
             for (String courseId : coursesIds) {
-               Course course = get(courseId);
-               if(course!=null)
-                courses.add(course);
+                Course course = get(courseId);
+                if (course != null)
+                    courses.add(course);
             }
         }
-      
+
         return courses;
     }
 
-    
-        
+    public List<Course> getAvailableCoursesForStudent(Student selectedStudent) {
+        return getAll().stream().filter(i->!adminDb.getStudentCoursesIds(selectedStudent).contains(i.id)).collect(Collectors.toList());
     }
 
-   
-
-
+}
